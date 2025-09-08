@@ -15,7 +15,7 @@ JDBC (Java Database Connectivity) is an API for connecting and executing queries
 ### Establishing a Connection
 ```java
 Connection connection = DriverManager.getConnection(
-    "jdbc:mysql://localhost:3306/mydb", "user", "password"
+    "jdbc:oracle:thin:@localhost:1521:xe", "user", "password"
 );
 ```
 

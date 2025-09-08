@@ -54,6 +54,7 @@ When you run a Java application, the Java Virtual Machine (JVM) follows these ma
 3. **Interpretation and Execution**  
    The JVM interprets the bytecode instructions, translating them into machine code for the host system. Modern JVMs use Just-In-Time (JIT) compilation to optimize performance by compiling frequently used code paths into native code.
 
+
 **Summary:**  
 The JVM loads classes, checks their safety, and then executes them by interpreting or compiling the bytecode, enabling Java applications to run on any platform with a compatible JVM.
 
