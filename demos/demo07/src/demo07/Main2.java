@@ -32,6 +32,15 @@ public class Main2 {
 		/// WHAT ??????
 		set1.forEach(Main2::printRow);
 		Main2.drawLine();
+		
+		Map<Integer, Account> map1 = new HashMap<>();
+	for (int i = 0; i < 10; i++) {
+		int accId = 200 + i;
+		String customer = "Customer" + (i + 1);
+		LocalDate openingDate = LocalDate.now().minusYears(i + 1).minusMonths(i);
+		double balance = 1000 + i * 500;
+		map1.put(accId, new Account(accId, customer, openingDate, balance));
+	}
 	}
 	
 	public static void printRow(Account acc) {
