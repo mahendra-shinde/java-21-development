@@ -13,6 +13,17 @@ public class Main {
 		for(Animal a : animals) {
 			throwInWater(a);
 		}
+		
+		// Using lambda expression to implement Flyable interface
+		// Functional interface -> interface with single abstract method
+		// Could also be written as:
+		// class Superman implements Flyable { public void fly() { System.out.println("A Superman is flying"); } }
+		// Flyable superman = new Superman();
+		// Or even:
+		// Flyable f = new Flyable() { public void fly() { System.out.println("A Superman is flying"); } };
+		// f.fly();
+		Flyable superman = ()-> System.out.println("A Superman is flying");
+		superman.fly();
 	}
 	
 	static void throwInWater(Animal a) {
@@ -20,8 +31,9 @@ public class Main {
 			Swimable s = (Swimable) a;
 			s.swim();
 		}else {
-			System.out.println("Animal, you thrown in water is now drown !");
+			System.out.println("Animal thrown in water, has drown !");
 		}
 	}
+	//static void throwUp(Animal a) ....
 
 }
