@@ -1,7 +1,33 @@
 package demo07;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+class Product {
+    int productid;
+    String name;
+    int quantity;
+    float rate;
+    double amount;
+
+    public Product(int productid, String name, int quantity, float rate) {
+        this.productid = productid;
+        this.name = name;
+        this.quantity = quantity;
+        this.rate = rate;
+        this.amount = 0; // Initialize amount to 0
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productid=" + productid +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", rate=" + rate +
+                ", amount=" + amount +
+                '}';
+    }
+}
 
 public class Main5 {
     public static void main(String[] args) {
@@ -29,5 +55,34 @@ public class Main5 {
         
         // Using Stream API to find all customers with last name "Smith" and before collecting them
         // into a list, make their first names uppercase and then print them
+        customers.stream()
+                 .filter(c -> "Smith".equals(c.getLastName()))
+                 .map(c -> {
+                     c.setFirstName(c.getFirstName().toUpperCase());
+                     return c;
+                 })
+                 .forEach(c -> System.out.println(c.getCustId() + ": " + c.getFirstName() + " " + c.getLastName()));
+
+        // Create a Set of 10 products with amount = 0
+        Set<Product> products = new HashSet<>(Arrays.asList(
+            new Product(1, "Product1", 10, 5.5f),
+            new Product(2, "Product2", 20, 15.0f),
+            new Product(3, "Product3", 5, 25.0f),
+            new Product(4, "Product4", 8, 12.5f),
+            new Product(5, "Product5", 12, 7.5f),
+            new Product(6, "Product6", 15, 10.0f),
+            new Product(7, "Product7", 18, 20.0f),
+            new Product(8, "Product8", 22, 30.0f),
+            new Product(9, "Product9", 6, 50.0f),
+            new Product(10, "Product10", 14, 40.0f)
+        ));
+
+        // Calculate and print amount for each product using Stream and map
+        products.stream()
+                .map(product -> {
+                    product.amount = product.quantity * product.rate;
+                    return product;
+                })
+                .forEach(System.out::println);
     }
 }
