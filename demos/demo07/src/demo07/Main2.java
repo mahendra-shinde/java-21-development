@@ -17,16 +17,34 @@ public class Main2 {
 		System.out.println("Number of records :"+list1.size());
 		System.out.println("All records from the LIST");
 		/// WHAT ??????
-		list1.forEach(System.out::println);
 		
+		Main2.drawHeaderLine();
+		list1.forEach(Main2::printRow);
+		Main2.drawLine();
 		
 		Set<Account> set1 = new HashSet<>();
 		set1.addAll(list1);		// Copy elements from ONE COLLECTION TO ANOTHER
-		System.out.println("Number of records :"+set1.size());
-		System.out.println("All records from the SET");
-		/// WHAT ??????
-		set1.forEach(System.out::println);
+		System.out.println("\nNumber of records :"+set1.size());
+		System.out.println("\nAll records from the SET");
 		
+		Main2.drawHeaderLine();
+		
+		/// WHAT ??????
+		set1.forEach(Main2::printRow);
+		Main2.drawLine();
+	}
+	
+	public static void printRow(Account acc) {
+		System.out.printf("\n| %10d | %-15s | %12s | %14.2f |",acc.accId(), acc.customer(), acc.openingDate(), acc.balance());
+	}
+	public static void drawHeaderLine() {
+		drawLine();
+		System.out.printf("\n| %10s | %-15s | %12s | %14s |","Acc-ID","Customer","Opening Date","Balance");
+		drawLine();
+	}
+	
+	public static void drawLine() {
+		System.out.print("\n+------------+-----------------+--------------+----------------+");
 	}
 
 }
