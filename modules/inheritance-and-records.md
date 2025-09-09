@@ -6,6 +6,34 @@ Dive into inheritance and the use of Java records for data modeling.
 
 ## Topics Covered
 
+### Introduction to Records
+Records are a special kind of class in Java introduced in Java 14 (as a preview feature) and made stable in Java 16. They are designed to model immutable data.
+
+#### Key Points:
+- **Compact Syntax**: Automatically generates constructors, `equals()`, `hashCode()`, and `toString()` methods.
+- **Immutable Data**: Fields in a record are final by default.
+- **`record` Keyword**: Used to declare a record.
+
+#### Example:
+```java
+public record Transaction(int id, double amount, String type) {
+    // Additional methods can be added if needed
+    public String summary() {
+        return "Transaction ID: " + id + ", Amount: " + amount + ", Type: " + type;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Transaction transaction = new Transaction(101, 5000.0, "Credit");
+        System.out.println(transaction.id()); // Accessor method
+        System.out.println(transaction.amount());
+        System.out.println(transaction.summary());
+        System.out.println(transaction); // toString() method
+    }
+}
+```
+
 ### Basics of Inheritance
 Inheritance is a mechanism in Java where one class acquires the properties (fields) and behaviors (methods) of another class. It promotes code reuse and establishes a parent-child relationship between classes.
 
@@ -103,33 +131,6 @@ public class Main {
 }
 ```
 
-### Introduction to Records
-Records are a special kind of class in Java introduced in Java 14 (as a preview feature) and made stable in Java 16. They are designed to model immutable data.
-
-#### Key Points:
-- **Compact Syntax**: Automatically generates constructors, `equals()`, `hashCode()`, and `toString()` methods.
-- **Immutable Data**: Fields in a record are final by default.
-- **`record` Keyword**: Used to declare a record.
-
-#### Example:
-```java
-public record Transaction(int id, double amount, String type) {
-    // Additional methods can be added if needed
-    public String summary() {
-        return "Transaction ID: " + id + ", Amount: " + amount + ", Type: " + type;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Transaction transaction = new Transaction(101, 5000.0, "Credit");
-        System.out.println(transaction.id()); // Accessor method
-        System.out.println(transaction.amount());
-        System.out.println(transaction.summary());
-        System.out.println(transaction); // toString() method
-    }
-}
-```
 
 ## Resources
 - [Java Inheritance](https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
