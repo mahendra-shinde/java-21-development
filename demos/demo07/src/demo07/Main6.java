@@ -37,7 +37,7 @@ public class Main6 {
 
         // Example of reduce to get total amount of all products
         double totalAmount = products.stream()
-                .mapToDouble(p -> p.getAmount())
+                .mapToDouble(p -> p.amount)
                 .reduce(0, Double::sum);   // Start with 0 and sum all amounts      
         System.out.println("Total Amount of all products: " + totalAmount);
     }
