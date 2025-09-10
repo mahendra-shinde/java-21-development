@@ -5,10 +5,13 @@ Concurrency and multithreading in Java allow multiple threads to execute simulta
 
 ## Key Concepts
 
-- **Thread**: A lightweight process that executes independently.
-- **Runnable Interface**: Used to define a task for a thread.
-- **Synchronization**: Mechanism to control access to shared resources.
-- **Executor Framework**: Simplifies thread management.
+- **Thread**: A lightweight process that executes independently. In Java, threads are instances of the `Thread` class and can be started using the `start()` method. Each thread runs its own code path, allowing multiple operations to occur concurrently.
+
+- **Runnable Interface**: Used to define a task for a thread. By implementing the `Runnable` interface, you separate the task from the thread itself, promoting better design and reusability. The `run()` method contains the code that will execute in the thread.
+
+- **Synchronization**: Mechanism to control access to shared resources. Synchronization ensures that only one thread can access a critical section of code at a time, preventing data inconsistency and race conditions. This is typically achieved using the `synchronized` keyword.
+
+- **Executor Framework**: Simplifies thread management. The Executor framework provides a higher-level API for managing threads, handling thread creation, scheduling, and lifecycle. It includes classes like `ExecutorService` and `Executors` to efficiently manage thread pools and task execution.
 
 ## Examples
 
@@ -34,10 +37,18 @@ Thread thread = new Thread(new MyRunnable());
 thread.start();
 ```
 
-### Synchronization
+### Example: Synchronized Method
 ```java
-synchronized (this) {
-    // Critical section
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
 }
 ```
 
