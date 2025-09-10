@@ -31,6 +31,19 @@ int sum = Arrays.asList(1, 2, 3, 4, 5).stream()
     .reduce(0, Integer::sum);
 ```
 
+## Parallel Streams
+
+Parallel streams enable concurrent processing of data by leveraging multiple CPU cores. They can be created using the `parallelStream()` method or by calling `.parallel()` on an existing stream.
+
+### Example: Using Parallel Streams
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.parallelStream()
+    .mapToInt(Integer::intValue)
+    .sum();
+```
+
+**Note:** Parallel streams can improve performance for large datasets, but may introduce complexity such as thread-safety concerns and unpredictable ordering.
 ## Best Practices
 
 - Use parallel streams for large datasets to improve performance.
