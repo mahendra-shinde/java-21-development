@@ -28,7 +28,8 @@ java demo09.Main2 12,000 + 500
 # Expects results 12500
 
 java demo09.Main2 500 + two
-# Expected an error with "Try again" message
+# Expected an error with "TWO " invalid number, assumes ZERO
+# Result would be 500
 ```
 
 ## Demo 3 : Reusable method to convert number, but it delays / postpone exception handling to main method using `throws` clause.

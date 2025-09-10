@@ -12,18 +12,14 @@ public class Main2 {
 		
 		if(args.length<3) {
 			System.out.println("Incorrect Syntax, requires 3 arguments");
-			System.out.println("java demo09.Main <num1> <OPERATOR> <num2> ");
+			System.out.println("java demo09.Main2 <num1> <OPERATOR> <num2> ");
 			return;
 		}
 		
-		try {
+		
 		n1 = Main2.convertToDouble(args[0]);
+		
 		n2 = Main2.convertToDouble(args[2]);
-		}catch(ParseException ex) {
-			System.out.println("One of the numbers is invalid !");
-			System.out.println("Try again !");
-			return;
-		}
 		
 		opr = args[1].trim().charAt(0);		// Take 1st character from 2nd argument as operator
 		
@@ -46,11 +42,15 @@ public class Main2 {
 		
 	}
 	
-	static double convertToDouble(String num) throws ParseException{
-		
+	static double convertToDouble(String num) {
+		try {
 		NumberFormat nf = NumberFormat.getNumberInstance();
 		return nf.parse(num).doubleValue();
-		
+		}catch(ParseException ex) {
+			System.out.println(ex.getMessage());
+			System.out.println("Invalid number, replaced with ZERO !");
+			return 0;
+		}
 	}
 	
 
