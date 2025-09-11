@@ -1,5 +1,6 @@
 package com.mahendra.demo15.dao;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 import com.mahendra.demo15.models.*;
@@ -33,7 +34,9 @@ public class LoanDAO {
 		for(Loan l : loans) {
 			if(l instanceof ApplianceLoan) {
 				ApplianceLoan loan = (ApplianceLoan)l;
-				System.out.println(loan.getAccNum()+" for Appliance type: "+loan.getApplianceType()+" Disbursed :"+loan.getAmount()+" on "+loan.getDisbursementDate());
+				System.out.println(loan.getAccNum()+" for Appliance type: "+loan.getApplianceType()+" Disbursed :"+
+						convertAmounts(loan.getAmount())
+				+" on "+loan.getDisbursementDate());
 			}
 		}
 	}
@@ -43,13 +46,24 @@ public class LoanDAO {
 		for(Loan l : loans) {
 			if(l instanceof HomeLoan) {
 				HomeLoan loan = (HomeLoan)l;
-				System.out.println(loan.getAccNum()+" for Property worth: "+loan.getPropertyCost()+" DIsbursed :"+loan.getAmount()+" on "+loan.getDisbursementDate());
+				System.out.println(loan.getAccNum()+" for Property worth: "+ 
+						convertAmounts(loan.getPropertyCost())
+						+" DIsbursed :"+
+						convertAmounts(loan.getAmount())
+						+" on "+loan.getDisbursementDate());
 			}
 		}
 		
 	}
 	
+	private String convertAmounts(double amount) {
+		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		return nf.format(amount);
+	}
 	
+	public List<Loan> getAll(){
+		return loans;
+	}
 	
 }
 

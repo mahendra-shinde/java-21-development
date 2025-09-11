@@ -1,6 +1,8 @@
 package com.mahendra.demo15.app;
 
 import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 import com.mahendra.demo15.dao.LoanDAO;
@@ -33,7 +35,14 @@ public class Main {
 		System.out.println("List all appliances loan");
 		dao.printLoansOfType("appliance");
 		
+		DataWriter writer = new DataWriter();
+		List<HomeLoan> homeLoans = new LinkedList<>();
 		
+		homeLoans.add(new HomeLoan(1023, LocalDate.of(2019, 2, 10), 5200000,20, 9.3F, 7000000, 1800000, InterestType.FLOATING));
+		homeLoans.add(new HomeLoan(1024, LocalDate.of(2008, 8, 15), 4000000, 20, 7.7F, 4500000, 500000, InterestType.FIXED));
+		
+		
+		writer.writeHLData(homeLoans);
 
 	}
 
