@@ -1,0 +1,26 @@
+productId,name,description,category,price_per_unit,avail_quantity
+1,Apple iPhone 15,Latest model smartphone,Electronics,999.99,50
+2,Samsung Galaxy S23,Flagship Android phone,Electronics,899.99,40
+3,Sony WH-1000XM5,Noise-cancelling headphones,Electronics,349.99,30
+4,Dell XPS 15,High-performance laptop,Computers,1499.99,20
+5,HP Envy 13,Lightweight laptop,Computers,999.99,25
+6,Logitech MX Master 3,Wireless mouse,Accessories,99.99,100
+7,Apple Magic Keyboard,Sleek wireless keyboard,Accessories,129.99,80
+8,Canon EOS R5,Professional mirrorless camera,Cameras,3899.99,10
+9,Nikon Z6 II,Full-frame mirrorless camera,Cameras,1999.99,15
+10,Samsung QLED TV 65",Smart 4K TV,Electronics,1299.99,35
+11,Sony Bravia OLED 55",Premium 4K TV,Electronics,1799.99,20
+12,KitchenAid Stand Mixer,Versatile kitchen appliance,Home Appliances,499.99,25
+13,Dyson V15 Detect,High-end vacuum cleaner,Home Appliances,699.99,30
+14,Instant Pot Duo 7-in-1,Multi-functional pressure cooker,Home Appliances,129.99,50
+15,Adidas Ultraboost 22,Comfortable running shoes,Footwear,189.99,60
+16,Nike Air Max 270,Stylish sneakers,Footwear,149.99,70
+17,The North Face Jacket,Waterproof winter jacket,Clothing,249.99,40
+18,Levi's 501 Jeans,Classic straight-fit jeans,Clothing,89.99,100
+19,Ray-Ban Aviator Sunglasses,Timeless eyewear,Accessories,159.99,50
+20,Fossil Gen 6 Smartwatch,Stylish wearable tech,Accessories,299.99,30
+21,Fitbit Charge 5,Fitness tracker,Accessories,149.99,50
+22,GoPro HERO11,Action camera,Cameras,499.99,25
+23,Microsoft Surface Pro 9,2-in-1 laptop,Computers,1199.99,15
+24,Asus ROG Zephyrus G14,High-performance gaming laptop,Computers,1599.99,10
+25,Amazon Echo Dot (5th Gen),Smart speaker,Electronics,49.99,200
