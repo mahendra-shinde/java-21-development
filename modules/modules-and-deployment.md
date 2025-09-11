@@ -84,9 +84,9 @@ To run this setup, ensure that the `CalcModule` is available in the module path 
 
 1. **Creating a Module**:
    - Open Eclipse IDE and create a new Java project.
-   - Right-click the project in the Project Explorer and select `Configure > Create Module`.
+   - There should be a small 'checkbox' below in project creation dialogbox to create module.
    - Provide a name for the module (e.g., `CalcModule`).
-   - Add a `module-info.java` file to define the module's exports and requirements.
+   - Modify existing `module-info.java` file to define the module's exports and requirements.
 
 2. **Adding Classes to the Module**:
    - Create packages and classes within the module as needed.
@@ -94,7 +94,7 @@ To run this setup, ensure that the `CalcModule` is available in the module path 
 
 3. **Using a Module in Another Project**:
    - Create a new Java project for the consuming module (e.g., `Demo13`).
-   - Right-click the project and select `Properties > Java Build Path > Module Path`.
+   - Right-click the project and select `Properties > Java Build Path > Projects > Module Path`.
    - Add the module (e.g., `CalcModule`) to the module path.
    - Import the required classes from the module and use them in your code.
 
